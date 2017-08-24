@@ -1,11 +1,13 @@
- item1 = {:product => "tv", :color => "black", :price => 800}
- item2 = {:product => "computer", :color => "silver", :price => 900}
- item3 = {:product => "playstation", :color => "white", :price => 400}
+module Electronic_Store
+
+  def taxes
+    @price = @price * 0.1
+  end
+end
 
 
-
-class Item
-  attr_reader :product, :color, :active
+class Electronic
+  attr_reader :product, :color, :price, :active
   attr_writer :active, :price
  
 
@@ -21,29 +23,27 @@ class Item
 end
 
 
-item1 = Item.new(product: "tv", color: "black", price: 800)
 
-item2 = Item.new(product: "computer", color: "silver", price: 900)
+electronic1 = Electronic.new(product: "tv", color: "black", price: 800)
 
-item3 = Item.new(product: "playstation", color: "white", price: 400)
+electronic2 = Electronic.new(product: "computer", color: "silver", price: 900)
 
-item1.print_info
-item2.print_info
-item3.print_info
+electronic3 = Electronic.new(product: "playstation", color: "white", price: 400)
 
-class Electronic < Item
+
+class Device < Electronic
   def initialize(input_options) 
     super
-    @items = input_options[:items]
+    @electronics = input_options[:electronic]
   end
 end
 
-electronic = Electronic.new(product: "ipad", color: "black", price: 600)
+device = Electronic.new(product: "ipad", color: "black", price: 600)
 
-electronic.print_info
+
 
   
-
+p electronic1.print_info
 
 
 
